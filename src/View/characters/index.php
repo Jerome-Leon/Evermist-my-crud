@@ -12,7 +12,7 @@
 
 <body class="cards">
     <?php include 'src/View/templates/header.php'; ?>
-    <h2>Les cartes des personnages</h2>
+    <h2>Les cartes de personnages</h2>
     <ul class="cardsContainer">
         <?php foreach ($characters as $character): ?>
             <div class="characterCard">

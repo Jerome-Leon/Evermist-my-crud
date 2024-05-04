@@ -17,7 +17,7 @@ h2 {
     display: flex;
     font-family: 'Carter One', display;
     color: #f1f1f1;
-    font-size: 2.5em;
+    font-size: 2.1em;
     padding: 3em 0 1em 0;
     justify-content: center;
     letter-spacing: .03em;
@@ -100,8 +100,8 @@ footer {
     justify-content: center;
     align-items: center;
     gap: .5em;
-    width: 40em;
-    height: 40em;
+    width: 43em;
+    height: 43em;
     background-image: url(../images/Background_boardgame_scroll.png);
     background-size: cover;
     left: 0;
@@ -112,9 +112,42 @@ footer {
 }
 
 .input {
-    width: 15em;
-    font-size: 1.3em;
-    color: #222;
+    width: 12em;
+    font-size: 2em;
+    color: #f1f1f1;
+    margin-bottom: .3em;
+}
+
+.input_int_attack {
+    position: absolute;
+    z-index: 5;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    color: #f1f1f1;
+    background-color: #9e1336;
+    border: #f1f1f1 dashed 1.5px;
+    font-size: 2.5em;
+    font-family: 'Carter One', display;
+    left: .3em;
+    bottom: 7em;
+    text-align: center;
+}
+
+.input_int_defense {
+    position: absolute;
+    z-index: 5;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    color: #f1f1f1;
+    background-color: #31577a;
+    border: #f1f1f1 dashed 1.5px;
+    font-size: 2.5em;
+    font-family: 'Carter One', display;
+    right: .3em;
+    bottom: 7em;
+    text-align: center;
 }
 
 .input-group {
@@ -122,7 +155,7 @@ footer {
     flex-direction: column;
     width: fit-content;
     position: static;
-    max-width: 15em;
+    max-width: 12em;
 }
 
 .input-group label.text {
@@ -130,19 +163,17 @@ footer {
     color: #222;
     font-weight: 700;
     position: relative;
-    top: 0rem;
-    margin: 0 0 0 7px;
-    padding: 0 3px;
+    top: -0.3rem;
+    padding: 0 4px;
     width: fit-content;
 }
 
 .input-group input[type=text].input {
     padding: .5em .5em;
-    font-size: 0.75rem;
-    border: 1px #222 solid;
+    font-size: 1rem;
+    border: 1px #f1f1f1 dashed;
     border-radius: 5px;
     background: transparent;
-    font-size: 1.1em;
 }
 
 .input-group input[type=text].input:focus {
@@ -152,10 +183,10 @@ footer {
 /* CSS BUTTON */
 
 button {
-    color: #222;
+    color: #9e1336;
     margin-top: 1em;
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 2em;
     border: none;
     background: none;
     font-weight: 600;
@@ -193,6 +224,7 @@ button:hover::before {
     border-radius: 1em;
     width: 18em;
     height: 25em;
+    margin-top: 3em;
     box-shadow: 0 2px 10px 7px #111;
     outline: #f1f1f1 solid .5em;
     transition: all ease .6s;
@@ -200,22 +232,30 @@ button:hover::before {
 }
 
 .portraitContainer {
+    position: absolute;
     z-index: 4;
-    width: 14em;
-    height: 14em;
+    width: 12em;
+    height: 12em;
     border-radius: 50%;
-    margin: -8em auto 0 auto;
-    border: 3px solid #f1f1f1;
+    margin: 0em auto 0 auto;
+    border: 2px dashed #f1f1f1;
     overflow: hidden;
+    left: 3em;
+    top: 1em;
 }
 
 .characterPortrait {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 12em;
+    height: 12em;
+    display: flex;
+    margin-left: -0.12em;
+    margin-top: -0.14em;
+    justify-content: center;
+    align-items: center;
 }
 
 .nameContainer {
+    position: absolute;
     z-index: 5;
     display: flex;
     justify-content: center;
@@ -225,14 +265,20 @@ button:hover::before {
     height: 5.4em;
     background-image: url(../images/Parchemin_zone_nom.png);
     background-size: cover;
-    margin-top: -14em;
+    margin-top: -3em;
     margin-left: -2.4em;
 }
 
-.nameContainer li {
-    margin-top: -1.4em;
+.input_name {
+    margin-top: -1em;
+    height: 1.7em;
     font-family: 'Carter One', display;
-    font-size: 1.4em;
+    font-size: 1.7em;
+    text-align: center;
+    background-color: transparent;
+    border: #f1f1f1 dashed 1px;
+    border-radius: .3em;
+    color: #f1f1f1;
 }
 
 .topBanner {
@@ -247,9 +293,162 @@ button:hover::before {
 .bottomBanner {
     position: absolute;
     background-color: #522d024d;
-    width: 45%;
+    width: 84%;
     height: 3em;
     border-radius: 1em 1em 0 0;
     bottom: 0;
     left: 8%;
 }
+
+.hpZone {
+    z-index: 11;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    width: 18em;
+    height: auto;
+    bottom: .2em;
+}
+
+.input_hp {
+    font-family: 'Carter One', display;
+    font-size: 1.2em;
+    color: #f1f1f1;
+    width: 3.5em;
+    padding: .3em 0;
+    background-color: transparent;
+    border-radius: .4em;
+    border: #f1f1f1 dashed 1px;
+    text-align: center;
+} 
+
+.text_name {
+    position: absolute;
+    font-family: 'Carter One', display;
+    font-size: 1.8em;
+    color: #222;
+    left: -2.5em;
+    bottom: -1.3em;
+}
+
+.text_portrait {
+    position: absolute;
+    font-family: 'Carter One', display;
+    font-size: 1.8em;
+    color: #222;
+    left: -1em;
+    bottom: 14.3em;
+}
+
+.text_attack {
+    position: absolute;
+    font-family: 'Carter One', display;
+    font-size: 1.8em;
+    color: #222;
+    left: -5em;
+    bottom: 10.3em;
+}
+
+.text_defense {
+    position: absolute;
+    font-family: 'Carter One', display;
+    font-size: 1.8em;
+    color: #222;
+    right: -5em;
+    bottom: 7.8em;
+}
+
+.text_hp {
+    position: absolute;
+    font-family: 'Carter One', display;
+    font-size: 1.8em;
+    color: #222;
+    left: -3.8em;
+    bottom: 0em;
+}
+
+.text_hp_max {
+    position: absolute;
+    width: 3em;
+    font-family: 'Carter One', display;
+    font-size: 1.8em;
+    color: #222;
+    right: -4.5em;
+    bottom: 2em;
+    line-height: 1em;
+}
+
+.portraitArrow {
+    position: absolute;
+    z-index: 15;
+    width: 6em;
+    height: 6em;
+    right: 7em;
+    bottom: 22em;
+    background-image: url(../images/arrow-round.png);
+    background-size: cover;
+    transform: rotate(105deg);
+}
+
+.nameArrow {
+    position: absolute;
+    z-index: 15;
+    width: 7em;
+    height: 3.5em;
+    left: -1em;
+    bottom: 0em;
+    background-image: url(../images/up-arrow.png);
+    background-size: cover;
+    transform: rotate(135deg);
+}
+
+.attackArrow {
+    position: absolute;
+    z-index: 15;
+    width: 6em;
+    height: 3em;
+    left: -4.3em;
+    bottom: 17em;
+    background-image: url(../images/up-arrow-2.png);
+    background-size: cover;
+    transform: rotate(20deg);
+}
+
+.defenseArrow {
+    position: absolute;
+    z-index: 15;
+    width: 6em;
+    height: 3em;
+    right: -4.3em;
+    bottom: 17em;
+    background-image: url(../images/up-arrow-2.png);
+    background-size: cover;
+    transform: rotate(230deg);
+}
+
+.hpArrow {
+    position: absolute;
+    z-index: 15;
+    width: 6em;
+    height: 3em;
+    left: -2.3em;
+    bottom: -1em;
+    background-image: url(../images/up-arrow-2.png);
+    background-size: cover;
+    transform: rotate(15deg);
+}
+
+.hpMaxArrow {
+    position: absolute;
+    z-index: 15;
+    width: 6em;
+    height: 3em;
+    right: -1.4em;
+    bottom: 2em;
+    background-image: url(../images/up-arrow.png);
+    background-size: cover;
+    transform: rotate(-60deg);
+}
+
