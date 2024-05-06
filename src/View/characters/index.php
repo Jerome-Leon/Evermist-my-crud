@@ -44,6 +44,7 @@
             </div>
         <?php endforeach; ?>
     </ul>
+
     <?php include 'src/View/templates/footer.php'; ?>
 </body>
 

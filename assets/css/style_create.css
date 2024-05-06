@@ -183,8 +183,8 @@ footer {
 /* CSS BUTTON */
 
 button {
-    color: #9e1336;
-    margin-top: 1em;
+    color: #222;
+    margin-top: .5em;
     text-decoration: none;
     font-size: 2em;
     border: none;
@@ -202,7 +202,7 @@ button::before {
     content: '';
     width: 0%;
     height: 3px;
-    background: #9e1336;
+    background: #222;
     display: block;
     transition: 0.5s;
 }
@@ -210,6 +210,24 @@ button::before {
 button:hover::after,
 button:hover::before {
     width: 100%;
+}
+
+.messageWindow {
+    display: flex;
+    width: 80%;
+    height: 3em;
+    border: 2px dashed #f1f1f1;
+    background-color: #f1f1f149;
+    border-radius: 1em;
+    justify-content: center;
+    align-items: center;
+    margin-top: .2em;
+}
+
+.error-message {
+    color: #9e1336;
+    font-family: 'Chelsea Market', display;
+    font-size: 1em;
 }
 
 /* CARD */
@@ -248,10 +266,23 @@ button:hover::before {
     width: 12em;
     height: 12em;
     display: flex;
-    margin-left: -0.12em;
+    margin-left: -0.14em;
     margin-top: -0.14em;
     justify-content: center;
     align-items: center;
+}
+
+.custom-image-upload {
+    cursor: pointer;
+}
+
+.custom-image-upload img {
+    width: 12em;
+    height: auto;
+}
+
+.custom-image-upload input {
+    display: none;
 }
 
 .nameContainer {
