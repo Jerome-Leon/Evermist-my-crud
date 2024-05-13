@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=carter-one:400|chelsea-market:400" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/scriptModal.js"></script>
     <title>Liste des personnages</title>
 </head>
 
@@ -32,8 +33,10 @@
                     <li><?= $character['defense'] ?></li>
                 </div>
                 <div class="buttonsZone">
-                    <li><a class="editButton" href="/characters/edit/<?= $character['id'] ?>"></a>
-                    <a class="deleteButton" href="/characters/delete/<?= $character['id'] ?>"></a></li>
+                    <li>
+                        <a class="editButton" href="/characters/edit/<?= $character['id'] ?>"></a>
+                        <a class="deleteButton" href="/characters/delete/<?= $character['id'] ?>"></a>
+                    </li>
                 </div>
                 <div class="hpZone">
                     <li>❤️ <?= $character['hit_points'] ?>/<?= $character['max_hit_points'] ?></li>
@@ -44,8 +47,8 @@
             </div>
         <?php endforeach; ?>
     </ul>
-
     <?php include 'src/View/templates/footer.php'; ?>
+
 </body>
 
 </html>

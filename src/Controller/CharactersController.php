@@ -8,21 +8,21 @@ class CharactersController {
     private $model;
 
     public function __construct() {
-        $this->model = new CharacterModel();
+        $this->model = new CharacterModel(); // Instanciation du modèle CharacterModel
     }
 
     public function index() {
-        $characters = $this->model->getAllCharacters();
-        include 'src/View/characters/index.php';
+        $characters = $this->model->getAllCharacters(); // Récupération de tous les personnages depuis la base de données
+        include 'src/View/characters/index.php'; // Inclusion de la vue index.php pour afficher les personnages
     }
 
     public function create() {
-        include 'src/View/characters/create.php';
+        include 'src/View/characters/create.php'; // Affichage du formulaire de création de personnage
     }
     
     public function store() {
         $errors = []; // Tableau pour stocker les messages d'erreur
-
+        
         // Vérification si une image a été téléchargée
         if(isset($_FILES['fileToUpload'])) {
             $target_dir = "assets/images/";
@@ -70,9 +70,9 @@ class CharactersController {
                         // Appeler la méthode du modèle pour ajouter le personnage avec le chemin de l'image à la base de données
                         $this->model->addCharacter($portrait_path, $name, $attack, $defense, $hit_points, $max_hit_points);
 
-                        // Rediriger l'utilisateur vers une autre page, par exemple la liste des personnages
+                        // Rediriger l'utilisateur vers une autre page, ici la liste des personnages
                         header('Location: /characters');
-                        exit(); // Assurez-vous d'arrêter l'exécution du script après la redirection
+                        exit(); // Pour s'assurer d'arrêter l'exécution du script après la redirection
                     } else {
                         // Gérer l'erreur si le téléchargement du fichier a échoué
                         $errors['upload_error'] = "Une erreur s'est produite lors du téléchargement du fichier.";
@@ -85,12 +85,12 @@ class CharactersController {
         }
 
         // Réafficher le formulaire avec les erreurs
-        include 'src/View/characters/create.php';
+        include 'src/View/characters/create.php'; // Réaffichage du formulaire avec les messages d'erreur
     }
     
     public function edit($id) {
-        $character = $this->model->getCharacterById($id);
-        include 'src/View/characters/edit.php';
+        $character = $this->model->getCharacterById($id); // Récupération d'un personnage par son ID depuis la base de données
+        include 'src/View/characters/edit.php'; // Affichage du formulaire de modification de personnage
     }
     
     public function update() {
@@ -102,11 +102,11 @@ class CharactersController {
         $hit_points = $_POST['hit_points'];
         $max_hit_points = $_POST['max_hit_points'];
         $this->model->updateCharacter($id, $portrait, $name, $attack, $defense, $hit_points, $max_hit_points);
-        header('Location: /characters');
+        header('Location: /characters'); // Redirection vers la liste des personnages après la mise à jour
     }
 
     public function delete($id) {
-        $this->model->deleteCharacter($id);
-        header('Location: /characters');
+        $this->model->deleteCharacter($id); // Suppression d'un personnage de la base de données par son ID
+        header('Location: /characters'); // Redirection vers la liste des personnages après la suppression
     }
 }

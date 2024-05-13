@@ -354,6 +354,17 @@ footer {
     background-size: cover;
 }
 
+.modalButton {
+    z-index: 12;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    bottom: -0.2em;
+    right: 4.5em;
+    background-image: url(../images/avatar.png);
+    background-size: cover;
+}
+
 .deleteButton {
     z-index: 12;
     position: absolute;
@@ -364,3 +375,5 @@ footer {
     background-image: url(../images/avatar.png);
     background-size: cover;
 }
+
+/* MODAL PART */
